@@ -5,7 +5,7 @@ import { h } from './dom.js';
 
 const CREDITS = [
   ['Team', 'AETHELGARD (Peshawar Local Event): concept, direction, decisions'],
-  ['AI disclosure', 'Claude (Anthropic) wrote the code, built the 3D assets with Blender scripts and helped with the data tables'],
+  ['AI disclosure', 'Claude (Anthropic) wrote the code and helped with the data tables'],
   ['three.js', 'MIT licence'],
   ['Vite', 'MIT licence'],
   ['Fonts', 'Barlow Condensed, IBM Plex Mono, IBM Plex Sans: SIL Open Font License 1.1, served by Google Fonts'],

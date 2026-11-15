@@ -10,7 +10,7 @@ export function createDemo({ game, store, ui }) {
   let running = false;
   let pace = 1;
   // Space Apps asks for a visible mark on AI-generated imagery, so every frame of a recording carries one.
-  const mark = h('p', { class: 'demo-mark stencil' }, 'Code and 3D assets generated with AI (Claude), directed by Team AETHELGARD');
+  const mark = h('p', { class: 'demo-mark stencil' }, 'Code generated with AI (Claude), directed by Team AETHELGARD');
 
   /** ?demo: browsers only allow sound after a click, so the fast run starts from one button. */
   function offer() {
