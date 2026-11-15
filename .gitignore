@@ -19,3 +19,7 @@ Thumbs.db
 /.claude/skills/
 /Claude outputs/
 /Space Mission Design Game*.md
+.vercel
+
+.vercel
+.env*

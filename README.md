@@ -2,11 +2,13 @@
 
 A 3D browser game where you design a spacecraft, take it through a NASA-style design review, fly the mission and read a plain-language report of what your choices cost. Built for the **NASA Space Apps Challenge 2026**, "Space Mission Design Game" challenge, by **Team AETHELGARD** (Peshawar Local Event).
 
-**Play:** https://yasherahmadsystems-lab.github.io/space-mission-design-game/
+**Play:** https://downlink-eight.vercel.app/
+
+**Source:** https://github.com/yasherahmadsystems-lab/Downlink (open source, MIT)
 
 Built during the hackathon weekend (14–15 November 2026).
 
-Add `?demo` to the address ([demo run](https://yasherahmadsystems-lab.github.io/space-mission-design-game/?demo)) and the game plays itself once from title to report, with a visible AI-generation mark, for recording the demo video.
+Add `?demo` to the address ([demo run](https://downlink-eight.vercel.app/?demo)) and the game plays itself once from title to report, with a visible AI-generation mark, for recording the demo video.
 
 ## Run it locally
 
