@@ -1,0 +1,45 @@
+{
+  "_about": "Tier 1 objectives and difficulty modes. Compiled with help from Claude (AI).",
+  "objectives": [
+    { "id": "hurricanes", "name": "Watch hurricanes form",
+      "summary": "Measure temperature and rain inside tropical storms several times a day.",
+      "cost_cap_usd": 1000000, "schedule_months": 24, "mission_years": 1,
+      "requirements": [
+        { "id": "instrument", "text": "Carry an instrument that can see inside storms", "verify": "Inspection of the payload", "metric": "instrument_match", "value": 1 },
+        { "id": "data", "text": "Return at least 0.25 GB of science data per day", "verify": "Analysis of the downlink budget", "metric": "downlink_gb_day", "value": 0.25, "unit": "GB/day" },
+        { "id": "life", "text": "Operate for at least 1 year", "verify": "Analysis of orbit lifetime", "metric": "lifetime_years", "value": 1, "unit": "yr" },
+        { "id": "cost", "text": "Stay under the cost cap with 10% in reserve", "verify": "Review of the budget", "metric": "budget_reserve", "value": 0.1 }
+      ],
+      "real_missions": [{ "name": "TROPICS", "note": "A NASA constellation of 3U CubeSats with microwave radiometers that watch tropical cyclones." }],
+      "source": "Game balance", "sources": { "real_missions": "NASA mission page (to verify before release)" } },
+    { "id": "crops", "name": "Monitor crops and wildfires",
+      "summary": "Photograph farmland and forests in several colours to track plant health and burn scars.",
+      "cost_cap_usd": 1300000, "schedule_months": 24, "mission_years": 2,
+      "requirements": [
+        { "id": "instrument", "text": "Carry a camera that sees several colour bands", "verify": "Inspection of the payload", "metric": "instrument_match", "value": 1 },
+        { "id": "pointing", "text": "Hold the camera steady on its target", "verify": "Analysis of attitude control", "metric": "pointing_fine", "value": 1 },
+        { "id": "data", "text": "Return at least 0.9 GB of images per day", "verify": "Analysis of the downlink budget", "metric": "downlink_gb_day", "value": 0.9, "unit": "GB/day" },
+        { "id": "life", "text": "Operate for at least 2 years", "verify": "Analysis of orbit lifetime", "metric": "lifetime_years", "value": 2, "unit": "yr" },
+        { "id": "cost", "text": "Stay under the cost cap with 10% in reserve", "verify": "Review of the budget", "metric": "budget_reserve", "value": 0.1 }
+      ],
+      "real_missions": [{ "name": "Landsat", "note": "The long-running NASA and USGS programme that images all of Earth's land. Far larger than a CubeSat, same idea." }],
+      "source": "Game balance", "sources": { "real_missions": "NASA mission page (to verify before release)" } },
+    { "id": "spaceweather", "name": "Measure space weather",
+      "summary": "Record changes in Earth's magnetic field as solar storms arrive.",
+      "cost_cap_usd": 700000, "schedule_months": 20, "mission_years": 1,
+      "requirements": [
+        { "id": "instrument", "text": "Carry a magnetic field sensor held away from the electronics", "verify": "Inspection of the payload", "metric": "instrument_match", "value": 1 },
+        { "id": "data", "text": "Return at least 0.004 GB of measurements per day", "verify": "Analysis of the downlink budget", "metric": "downlink_gb_day", "value": 0.004, "unit": "GB/day" },
+        { "id": "life", "text": "Operate for at least 1 year", "verify": "Analysis of orbit lifetime", "metric": "lifetime_years", "value": 1, "unit": "yr" },
+        { "id": "cost", "text": "Stay under the cost cap with 10% in reserve", "verify": "Review of the budget", "metric": "budget_reserve", "value": 0.1 }
+      ],
+      "real_missions": [],
+      "source": "Game balance" }
+  ],
+  "difficulties": [
+    { "id": "office_hours", "name": "Office Hours", "rules": "Sandbox. No cost cap and the review is optional.", "budget_scale": 1000, "review_required": false, "events": 0, "source": "NASA: Mission Design Lab (tier names); rules are Game balance" },
+    { "id": "concept", "name": "Concept Development", "rules": "Margins relaxed to 20% and a generous budget.", "margin_override": 0.2, "budget_scale": 1.25, "review_required": true, "events": 1, "source": "NASA: Mission Design Lab (tier names); rules are Game balance" },
+    { "id": "trade", "name": "Trade Study", "rules": "Full NASA margins. Compare two saved designs to reach CML 3.", "budget_scale": 1, "review_required": true, "events": 1, "source": "NASA: Mission Design Lab (tier names); rules are Game balance" },
+    { "id": "point", "name": "Point Design", "rules": "Full rules, a tighter budget and two in-flight events.", "budget_scale": 0.9, "review_required": true, "events": 2, "source": "NASA: Mission Design Lab (tier names); rules are Game balance" }
+  ]
+}

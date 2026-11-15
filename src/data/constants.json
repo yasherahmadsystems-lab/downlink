@@ -1,0 +1,49 @@
+{
+  "_about": "Physical constants and NASA pass rules. Every value names its source. Compiled with help from Claude (AI).",
+  "earth": {
+    "gm_km3_s2": { "value": 398600, "source": "NASA Fact Sheet" },
+    "radius_km": { "value": 6378.137, "source": "NASA Fact Sheet" }
+  },
+  "solar_irradiance_w_m2": { "value": 1361.0, "source": "NASA Fact Sheet" },
+  "thresholds": {
+    "mass_margin": { "value": 0.35, "source": "NASA: JPL CML" },
+    "power_margin": { "value": 0.35, "source": "NASA: JPL CML" },
+    "energy_margin": { "value": 0.35, "source": "NASA: JPL CML" },
+    "software_margin": { "value": 1.0, "source": "NASA: JPL CML" },
+    "link_margin_db": { "value": 6, "source": "NASA: JPL CML" },
+    "review_pass_fraction": { "value": 0.8, "source": "NASA: JPL CML" },
+    "budget_reserve": { "value": 0.1, "source": "NASA: CubeSat 101" },
+    "downlink_fraction": { "value": 0.9, "source": "Game balance" },
+    "ready_trl": { "value": 6, "source": "NASA: JPL CML" }
+  },
+  "cubesat": {
+    "launch_cap_usd": { "value": 300000, "source": "NASA: CubeSat 101" },
+    "antenna_deploy_min": { "value": 30, "source": "NASA: CubeSat 101" },
+    "first_beacon_min": { "value": 45, "source": "NASA: CubeSat 101" },
+    "min_build_months": { "value": 9, "source": "NASA: CubeSat 101" },
+    "typical_build_months": { "value": 24, "source": "NASA: CubeSat 101" }
+  },
+  "power": {
+    "cell_efficiency": { "value": 0.29, "source": "Game balance" },
+    "end_of_life_factor": { "value": 0.95, "source": "Game balance" },
+    "depth_of_discharge": { "value": 0.3, "source": "Game balance" },
+    "pointing_factor": {
+      "fixed": { "value": 0.3, "source": "Game balance" },
+      "tracking_none": { "value": 0.3, "source": "Game balance" },
+      "tracking_coarse": { "value": 0.45, "source": "Game balance" },
+      "tracking_fine": { "value": 0.8, "source": "Game balance" }
+    }
+  },
+  "link": {
+    "boltzmann_dbw_k_hz": { "value": -228.6, "source": "Physical constant" },
+    "required_ebn0_db": { "value": 10, "source": "Game balance" },
+    "losses_db": { "value": 3, "source": "Game balance" },
+    "min_elevation_deg": { "value": 10, "source": "Game balance" }
+  },
+  "schedule": {
+    "base_months": { "value": 12, "source": "Game balance" },
+    "months_per_instrument": { "value": 2, "source": "Game balance" },
+    "months_per_missing_trl": { "value": 3, "source": "Game balance" }
+  },
+  "ops_cost_usd_per_year": { "value": 60000, "source": "Game balance" }
+}

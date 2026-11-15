@@ -1,0 +1,92 @@
+/*
+ * Design tokens: Direction A, Integration Hall (docs/PLAN.md §2).
+ * Written by Claude (AI) for Team AETHELGARD, NASA Space Apps 2026.
+ *
+ * This is the only file that may hold raw colour values. Components use the
+ * semantic aliases in the second block, never the primitives in the first.
+ * The hall is a bright room by design, so there is no dark theme; the flight
+ * HUD re-maps the aliases under [data-scene="flight"].
+ */
+
+:root {
+  /* Primitives: the PLAN.md palette */
+  --hall: #e9e7e2;
+  --hall-2: #d9d6cf;
+  --graphite: #2b2d2f;
+  --graphite-2: #6b6a66;
+  --foil: #c9a227;
+  --signal: #e5562a;
+  --signal-deep: #b93f1b;
+  --go: #3e8e5e;
+  --caution: #d99a1e;
+  --go-deep: #2c6b45;
+  --caution-deep: #7d560a;
+  --void: #07080a;
+
+  /* Semantic aliases */
+  --surface: var(--hall);
+  --surface-2: var(--hall-2);
+  --text: var(--graphite);
+  --text-muted: var(--graphite-2);
+  --rule: var(--graphite-2);
+  --accent: var(--foil);
+  --action: var(--signal);
+  --action-pressed: var(--signal-deep);
+  --on-action: var(--hall);
+  --focus: var(--graphite);
+  --status-go: var(--go);
+  --status-caution: var(--caution);
+  --status-alert: var(--signal);
+  --status-go-text: var(--go-deep);
+  --status-caution-text: var(--caution-deep);
+  --status-alert-text: var(--signal-deep);
+
+  /* Type */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+
+  --text-xs: 0.6875rem; /* 11px stencil labels */
+  --text-sm: 0.8125rem; /* 13px */
+  --text-md: 1rem; /* 16px body */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 2rem; /* 32px */
+  --text-2xl: 3.5rem; /* 56px */
+  --text-display: clamp(3.5rem, 8.2vw, 8rem);
+
+  --track-stencil: 0.14em;
+
+  /* Spacing, base 4 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shape: machined edges, not soft cards */
+  --radius: 2px;
+  --hairline: 1px;
+
+  /* Layers */
+  --z-scene: 0;
+  --z-ui: 10;
+  --z-overlay: 20;
+  --z-modal: 30;
+
+  /* Motion (PLAN.md §2: seat 200-400 ms, camera 0.8-1.2 s) */
+  --dur-seat: 280ms;
+  --dur-camera: 1000ms;
+  --ease-seat: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-scene='flight'] {
+  --surface: var(--void);
+  --surface-2: var(--graphite);
+  --text: var(--hall);
+  --text-muted: var(--hall-2);
+  --rule: var(--graphite-2);
+  --focus: var(--hall);
+}

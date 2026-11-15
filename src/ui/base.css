@@ -1,0 +1,262 @@
+/* Base layout and the title screen. Written by Claude (AI) for Team AETHELGARD. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: var(--z-scene);
+}
+
+#ui {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-ui);
+  pointer-events: none;
+}
+
+#ui > * {
+  pointer-events: auto;
+}
+
+/* Stencil label: small spaced capitals, like markings on ground equipment */
+.stencil {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--track-stencil);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: var(--space-4) var(--space-8);
+  border: var(--hairline) solid var(--text);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background-color 120ms linear,
+    color 120ms linear;
+}
+
+.btn:hover {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.btn--primary {
+  background: var(--action);
+  border-color: var(--action);
+  color: var(--on-action);
+}
+
+.btn--primary:hover {
+  background: var(--action-pressed);
+  border-color: var(--action-pressed);
+  color: var(--on-action);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Title screen ---------- */
+
+.title {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: var(--space-8) var(--space-12);
+}
+
+.title__top,
+.title__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-8);
+}
+
+.title__main {
+  align-self: end;
+  max-width: min(46rem, 58vw);
+  padding-bottom: var(--space-12);
+}
+
+.title__name {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-display);
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.title__line {
+  margin: var(--space-6) 0 0;
+  max-width: 30rem;
+  font-size: var(--text-lg);
+  line-height: 1.4;
+}
+
+.title__actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.title__foot {
+  border-top: var(--hairline) solid var(--rule);
+  padding-top: var(--space-3);
+}
+
+.title__foot p {
+  margin: 0;
+}
+
+/* One load moment: the title seats like a part on the stand */
+@media (prefers-reduced-motion: no-preference) {
+  .title__main > * {
+    animation: seat var(--dur-seat) var(--ease-seat) both;
+  }
+  .title__main > :nth-child(2) {
+    animation-delay: 60ms;
+  }
+  .title__main > :nth-child(3) {
+    animation-delay: 120ms;
+  }
+  .title__main > :nth-child(4) {
+    animation-delay: 180ms;
+  }
+}
+
+@keyframes seat {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* ---------- Placeholder for stages not built yet ---------- */
+
+.stub {
+  position: absolute;
+  left: var(--space-12);
+  bottom: var(--space-16);
+  max-width: 30rem;
+}
+
+.stub h2 {
+  margin: var(--space-2) 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.stub p {
+  margin: 0 0 var(--space-6);
+}
+
+/* ---------- Credits dialog ---------- */
+
+.credits {
+  width: min(40rem, calc(100vw - var(--space-8)));
+  max-height: calc(100vh - var(--space-16));
+  padding: var(--space-8);
+  border: var(--hairline) solid var(--text);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.credits::backdrop {
+  background: color-mix(in srgb, var(--graphite) 55%, transparent);
+}
+
+.credits h2 {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+}
+
+.credits dl {
+  margin: 0 0 var(--space-6);
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.credits dt {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.credits dd {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .title {
+    padding: var(--space-6) var(--space-4);
+  }
+  .title__top,
+  .title__foot {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  .title__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .stub {
+    left: var(--space-4);
+    right: var(--space-4);
+  }
+  .credits dl {
+    grid-template-columns: 1fr;
+  }
+}

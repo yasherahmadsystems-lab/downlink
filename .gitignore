@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.claude/settings.local.json
+
+# Blender backups and caches
+*.blend1
+*.blend2
+*.blend@
+__pycache__/
+
+# OS and editor
+Thumbs.db
+.DS_Store
+*.log
+
+# Private planning material (kept local, not published)
+/docs/
+/CLAUDE.md
+/.claude/skills/
+/Claude outputs/
+/Space Mission Design Game*.md
